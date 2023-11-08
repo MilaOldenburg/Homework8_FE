@@ -1,0 +1,37 @@
+// Задача 1
+const numbersContainer = document.querySelector('.numbers');
+
+for (let i = 100; i >= 50; i -= 10) {
+    const paragraph = document.createElement('p');
+    paragraph.textContent = i;
+    numbersContainer.appendChild(paragraph);
+}
+
+
+// Задача 2
+const stringsContainer = document.querySelector('.strings_container');
+const stringsArray = ['Произвольная строка 1', 'Еще одна строка', 'Третья строка'];
+
+for (const string of stringsArray) {
+    const paragraph = document.createElement('p');
+    paragraph.textContent = string;
+    stringsContainer.appendChild(paragraph);
+}
+
+
+// Задача 3
+const usersContainer = document.querySelector('.users_container');
+const usersArray = [
+    { first_name: 'Иван', last_name: 'Иванов', age: 25 },
+    { first_name: 'Анна', last_name: 'Петрова', age: 18 },
+    { first_name: 'Петр', last_name: 'Сидоров', age: 30 }
+];
+
+for (const user of usersArray) {
+    if (user.age >= 18) {
+        const card = document.createElement('div');
+        card.classList.add('user-card');
+        card.innerHTML = `<p>Имя: ${user.first_name}</p><p>Фамилия: ${user.last_name}</p><p>Возраст: ${user.age}</p>`;
+        usersContainer.appendChild(card);
+    }
+}
